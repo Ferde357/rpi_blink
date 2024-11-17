@@ -11,7 +11,7 @@ def blink (led, blinkCount, blinkPauseSeconds):
 led = gpiozero.LED(4)
 i = 5
 while i > 0:
-    blink(led,5,.1)
+    blink(led,2,.1)
     led.off()
     time.sleep(1)
     i -= 1
