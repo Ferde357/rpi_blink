@@ -1,17 +1,15 @@
-import gpiozero
-import time
 
-def blink (led, blinkCount, blinkPauseSeconds):
+import time
+from typing import Any
+
+
+def blink (led: Any, blinkCount: int, blinkPauseSeconds:float)->None:
+    """
+        Makes an LED blink a specific number of times 
+    """
     for _ in range (blinkCount):
         led.on()
         time.sleep(blinkPauseSeconds)
         led.off()
         time.sleep(blinkPauseSeconds)
 
-led = gpiozero.LED(4)
-i = 5
-while i > 0:
-    blink(led,2,.1)
-    led.off()
-    time.sleep(1)
-    i -= 1
